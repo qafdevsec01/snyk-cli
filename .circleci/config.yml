@@ -25,6 +25,9 @@ parameters:
     type: string
     # https://go.dev/doc/devel/release
     default: '1.20.5'
+  isRelease:
+    type: boolean
+    default: false
 
 executors:
   alpine:
@@ -130,6 +133,9 @@ jobs:
 
     steps:
       - checkout
+      - run:
+          name: Print Parameter
+          command: echo << pipeline.parameters.isRelease >>
       - run:
           name: Installing dependencies
           command: npm install
