@@ -1,6 +1,8 @@
 module github.com/snyk/cli/cliv2
 
-go 1.18
+go 1.21
+
+toolchain go1.21.1
 
 require (
 	github.com/elazarl/goproxy v0.0.0-20230808193330-2592e75ae04a
@@ -38,7 +40,7 @@ require (
 	github.com/apparentlymart/go-textseg/v13 v13.0.0 // indirect
 	github.com/apparentlymart/go-versions v1.0.1 // indirect
 	github.com/atotto/clipboard v0.1.4 // indirect
-	github.com/aws/aws-sdk-go v1.45.6 // indirect
+	github.com/aws/aws-sdk-go v1.45.8 // indirect
 	github.com/aymanbagabas/go-osc52 v1.2.1 // indirect
 	github.com/bgentry/go-netrc v0.0.0-20140422174119-9fd32a8b3d3d // indirect
 	github.com/bmatcuk/doublestar v1.3.4 // indirect
