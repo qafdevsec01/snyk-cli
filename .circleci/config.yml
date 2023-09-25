@@ -160,7 +160,7 @@ commands:
                 name: Add go binary to PATH
                 command: |
                   New-Item -Path $profile -ItemType File -Force
-                  '$Env:Path = "<< parameters.extraction_path >>\go\bin;" + $Env:Path' >> $profile
+                    '$Env:Path = "C:\go\bin;" + $Env:Path' >> $profile
 
   install-deps-windows-full:
     steps:
