@@ -127,7 +127,11 @@ if __name__ == "__main__":
     args = init_argparse()
 
     # check if go is cached, before trying to download and extract it
-    file_dir = os.path.join(os.path.abspath(args.extraction_path), "go")
+    file_dir = os.path.join(os.path.abspath(args.extraction_path), "go", "bin")
+    print("Checking if Go exists at:", file_dir)
+
+    os.system("go version")
+
     if os.path.exists(file_dir):
         print("Restored from cache, skipping download and extraction")
         sys.exit(0)

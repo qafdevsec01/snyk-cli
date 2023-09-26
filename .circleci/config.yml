@@ -160,7 +160,7 @@ commands:
                 name: Add go binary to PATH
                 command: |
                   New-Item -Path $profile -ItemType File -Force
-                    '$Env:Path = "C:\go\bin;" + $Env:Path' >> $profile
+                  '$Env:Path = "<< parameters.extraction_path >>\go\bin;" + $Env:Path' >> $profile
 
   install-deps-windows-full:
     steps:
@@ -524,6 +524,7 @@ workflows:
           executor: win-server2022-amd64
           test_snyk_command: binary-releases\\snyk-win.exe
           install_deps_extension: windows-full
+          install_path: 'C:'
           dont_skip_tests: 0
           go_target_os: windows
           go_os: windows
