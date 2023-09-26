@@ -135,6 +135,7 @@ dependencies: $(V1_DIRECTORY)/$(V1_EXECUTABLE_NAME) $(V1_DIRECTORY)/$(V1_EXECUTA
 summary:
 	@echo "$(LOG_PREFIX) Build Summary"
 	@echo "$(LOG_PREFIX)  Using Go installation:        $(shell which go)"
+	@echo "$(LOG_PREFIX)  Using Go version:             $(shell go version)"
 	@echo "$(LOG_PREFIX)  Non-Standard Crypto-Backend:  $(FIPS_CRYPTO_BACKEND)"
 	@echo "$(LOG_PREFIX)  Building Binary:              $(BUILD_DIR)/$(V2_EXECUTABLE_NAME)"
 	@echo "$(LOG_PREFIX)  Building version:             $(CLI_V1_VERSION_TAG)"
