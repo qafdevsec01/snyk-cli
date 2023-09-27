@@ -524,13 +524,13 @@ workflows:
           executor: win-server2022-amd64
           test_snyk_command: binary-releases\\snyk-win.exe
           install_deps_extension: windows-full
-          install_path: 'C:'
+          install_path: 'C:\'
           dont_skip_tests: 0
           go_target_os: windows
           go_os: windows
           go_arch: amd64
           go_download_base_url: << pipeline.parameters.go_download_base_url >>
-          pre_test_cmds: Import-Module $env:ChocolateyInstall\helpers\chocolateyProfile.psm1; RefreshEnv
+          pre_test_cmds: Import-Module $env:ChocolateyInstall\helpers\chocolateyProfile.psm1; RefreshEnv; $profile
 
       - sign:
           name: sign windows amd64
