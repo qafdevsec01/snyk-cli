@@ -492,6 +492,7 @@ workflows:
           test_snyk_command: ./binary-releases/snyk-alpine
           install_deps_extension: alpine-full
           dont_skip_tests: 0
+          pre_test_cmds: source $BASH_ENV ; echo $PATH
 
       - acceptance-tests:
           name: acceptance-tests macOS amd64
