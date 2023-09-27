@@ -64,10 +64,19 @@ describe('`snyk test` of basic projects for each language/ecosystem', () => {
       console.warn("Please ensure to install 'go' to run this test.");
     }
 
-    const { code } = await runSnykCLI('test', {
+    await runCommand('go', ['mod', 'tidy'], {
+      cwd: project.path(),
+      shell: true,
+    });
+
+    const { code, stderr, stdout } = await runSnykCLI('test -d', {
       cwd: project.path(),
       env,
     });
+
+    console.log(stderr);
+    console.log(stdout);
+
     expect(code).toEqual(0);
   });
 
