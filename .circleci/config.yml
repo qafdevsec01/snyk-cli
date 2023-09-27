@@ -807,7 +807,7 @@ jobs:
           go_target_os: linux
           go_arch: amd64
           base_url: << pipeline.parameters.go_download_base_url >>
-          extraction_path: '.'
+          extraction_path: '/tmp'
       - run:
           name: Running Go unit tests
           working_directory: ./cliv2
@@ -857,7 +857,7 @@ jobs:
         default: 'noop'
       install_path:
         type: string
-        default: '.'
+        default: '/tmp'
     executor: << parameters.executor >>
     steps:
       - prepare-workspace
@@ -899,7 +899,7 @@ jobs:
         type: string
       install_path:
         type: string
-        default: '.'
+        default: '/tmp'
       test_snyk_command:
         type: string
       executor:
