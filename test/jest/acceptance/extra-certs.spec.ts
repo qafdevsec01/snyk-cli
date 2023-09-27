@@ -36,6 +36,7 @@ describe('Extra CA certificates specified with `NODE_EXTRA_CA_CERTS`', () => {
   it('using a valid cert file', async () => {
     const goVersion = (await runCommand('go', ['version'])).stdout;
     console.log(goVersion);
+    console.log(process.env.PATH);
 
     // generate certificate
     const res = await runCommand(

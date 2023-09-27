@@ -530,7 +530,7 @@ workflows:
           go_os: windows
           go_arch: amd64
           go_download_base_url: << pipeline.parameters.go_download_base_url >>
-          pre_test_cmds: Import-Module $env:ChocolateyInstall\helpers\chocolateyProfile.psm1; RefreshEnv; $profile
+          pre_test_cmds: Import-Module $env:ChocolateyInstall\helpers\chocolateyProfile.psm1; RefreshEnv; & $profile; echo $Env:Path
 
       - sign:
           name: sign windows amd64
