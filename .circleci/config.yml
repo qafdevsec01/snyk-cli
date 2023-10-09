@@ -745,11 +745,13 @@ workflows:
           name: Trigger building snyk-images
           context: team-hammerhead-common-deploy-tokens
           requires:
-            - upload npm
+            # - upload npm
+            - secrets-scan
           filters:
             branches:
               only:
-                - master
+                # - master
+                - chore/head-746-pass-explicit-version-to-snyk-images
 
 ####################################################################################################
 # JOBS
